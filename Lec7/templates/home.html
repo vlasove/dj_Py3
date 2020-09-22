@@ -1,0 +1,7 @@
+<!--templates/home.html-->
+<h1>Message / Post Django Application</h1>
+<ul>
+    {% for post in posts_list %}
+        <li> Text : {{post.text}}</li>
+    {% endfor %}
+</ul>
