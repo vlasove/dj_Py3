@@ -1,3 +1,4 @@
+* 0) Установка утилиты для создания окружений ```pip install pipenv```
 * 1) Сбрка окружения ```pipenv shell```
 * 2) Установка зависимостей ```pipenv install django```
 * 3) Запуск проекта ```django-admin startproject <project_name> .```
