@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
 
+    'crispy_forms',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -131,3 +132,10 @@ AUTH_USER_MODEL = 'users.CustomUser'
 # Для редиректа после успешного login/logout
 LOGIN_REDIRECT_URL =  'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+# Подсказываем crispy с каким фреймворком CSS работаем
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+# Куда отправляем все сообщения вместо почты
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
