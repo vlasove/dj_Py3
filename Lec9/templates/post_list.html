@@ -14,16 +14,24 @@
             </div>
             <!--Середина карточки-->
             <div class="card-body">
-                {{post.body}}
-            </div>
-
-            <!--Добавление опции редактирования и удаления поста-->
-            <div class="card-footer text-center text-muted">
+                <p>{{post.body}}</p>
+                <!--Добавление опции редактирования и удаления поста-->
                 <a href="{% url 'post_edit' post.pk %}">Edit</a>
                 | 
                 <a href="{% url 'post_delete' post.pk%}">Delete</a>
             </div>
 
+            
+            <div class="card-footer">
+                <!--Отображение комментариев для поста-->
+                {% for comment in post.comments.all %}
+                <p>
+                    <span class="font-weight-bold">{{comment.author}} &middot;</span>
+                    {{comment}}
+                </p>
+                {% endfor %}
+                
+            </div>
         </div>
         <br/>
     {% endfor %}
