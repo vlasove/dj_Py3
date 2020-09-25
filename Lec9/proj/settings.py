@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'posts.apps.PostsConfig',
 
     'crispy_forms',
 
@@ -44,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+TIME_ZONE = 'Europe/Moscow'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -138,4 +141,10 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # Куда отправляем все сообщения вместо почты
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

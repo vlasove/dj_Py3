@@ -1,0 +1,28 @@
+<!--templates/post_list.html-->
+{% extends 'base.html' %}
+
+{% block title %} Posts {% endblock title %}
+
+{% block content %}
+    {% for post in post_list %}
+        <div class="card">
+            <!--Верхняя часть карточки-->
+            <div class="card-header">
+                <span class="font-weight-bold">{{post.title}}</span> &middot;
+                <span class="text-muted">by {{post.author}} | 
+                {{post.date}}</span> 
+            </div>
+            <!--Середина карточки-->
+            <div class="card-body">
+                {{post.body}}
+            </div>
+
+            <!--Добавление опции редактирования и удаления поста-->
+            <div class="card-footer text-center text-muted">
+                <a href="#">Edit</a> | <a href="#">Delete</a>
+            </div>
+
+        </div>
+        <br/>
+    {% endfor %}
+{% endblock content %}
