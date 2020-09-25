@@ -127,6 +127,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_FILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 #Для выбора своей пользовательской модели
@@ -147,3 +150,5 @@ EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
 EMAIL_HOST_PASSWORD = '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'
 EMAIL_PORT = 25
 EMAIL_USE_TLS = True
+
+
